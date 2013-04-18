@@ -1,0 +1,13 @@
+{% extends "comments/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Preview your comment" %}{% endblock %}
+
+{% block content %}
+    {% load comments crispy_forms_tags %}
+    <h1>Commenting on {{ form.target_object.title }}</h1>
+    <h4>Preview of your comment</h4>
+    <blockquote>{{ comment|linebreaks }}</blockquote>
+    <h4>It's not too late to make changes, but once you click Post it will be</h4>
+    {% crispy form %}
+{% endblock %}

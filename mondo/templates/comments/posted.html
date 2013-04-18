@@ -1,0 +1,11 @@
+{% extends "comments/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Thanks for commenting" %}.{% endblock %}
+
+{% block content %}
+<h1>{% trans "Thank you for your comment" %}.</h1>
+<h2>{% trans "Here's what you typed:" %}</h2>
+<p>{{ comment.comment }}</p>
+<a href="{{ comment.get_content_object_url }}">Back to the blog entry</a>
+{% endblock %}
